@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Target, Plus, RefreshCw, Trash2, TrendingUp, TrendingDown, Minus, ExternalLink, Clock, Loader2, X, Search, Globe, AlertCircle, Eye, EyeOff, Filter, ArrowUpDown, Lightbulb } from "lucide-react";
+import { Plus, RefreshCw, Trash2, TrendingUp, TrendingDown, Minus, ExternalLink, Clock, Loader2, X, Search, Globe, AlertCircle, Eye, EyeOff, Filter, ArrowUpDown, Lightbulb } from "lucide-react";
 import { dummyRankings } from "../assets/assets";
 
 interface KeywordItem {
@@ -309,7 +309,7 @@ export default function RankTracker() {
                                         type="text"
                                         value={newKeyword}
                                         onChange={(e) => setNewKeyword(e.target.value)}
-                                        placeholder='e.g., "best seo tools"'
+                                        placeholder='e.g. "best seo tools"'
                                         required
                                         className="w-full pl-11 pr-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder-muted-foreground outline-none focus:border-primary/50 transition-colors text-sm"
                                     />
@@ -334,7 +334,7 @@ export default function RankTracker() {
                             </div>
 
                             <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 text-xs text-muted-foreground">
-                                <p className="inline-flex"><Lightbulb /> &nbsp; We'll search Google for your keyword, find your website's position (up to page 5), and track it daily.</p>
+                                <p className="inline-flex"><Lightbulb className="h-8 w-8 text-muted-foreground"/> &nbsp; Analyze Google search results to identify your website's ranking position and track performance over time.</p>
                             </div>
 
                             <button type="submit" disabled={adding} className="w-full py-3 rounded-xl bg-primary font-600 syne text-sm text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-50" style={{ color: "var(--background)" }}>
@@ -342,7 +342,7 @@ export default function RankTracker() {
                                     <Loader2 size={18} className="animate-spin" />
                                 ) : (
                                     <>
-                                        <Target size={18} />
+                                        <TrendingUp size={18} />
                                         Start Tracking
                                     </>
                                 )}

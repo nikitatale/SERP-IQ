@@ -49,7 +49,7 @@ export default function Analyze() {
     return (
         <div className="min-h-screen pt-20 bg-background">
           
-            <div className="border-b border-border bg-card/50 backdrop-blur-sm ">
+            <div className="border-b border-border bg-card/50 backdrop-blur-sm text-center">
                 <div className="max-w-4xl mx-auto px-4 py-6">
                     <span className="mono text-xs text-muted-foreground uppercase tracking-widest">SEO Analyzer</span>
                     <h1 className="syne text-2xl sm:text-3xl font-700 text-foreground mt-1">
@@ -80,7 +80,7 @@ export default function Analyze() {
                                         type="text"
                                         value={url}
                                         onChange={(e) => setUrl(e.target.value)}
-                                        placeholder="Enter website URL (e.g., example.com)"
+                                        placeholder="Enter website URL (e.g. example.com)"
                                         className="w-full bg-transparent text-foreground placeholder-muted-foreground outline-none text-sm py-3"
                                         id="analyze-url-input"
                                         autoFocus

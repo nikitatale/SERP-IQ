@@ -1,6 +1,6 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-import { Search, BarChart3, History, LogOut, Menu, X, Target, Sun, Moon } from "lucide-react";
+import { LogOut, Menu, X, Sun, Moon, LayoutDashboard, SearchCheck, TrendingUp, FileText } from "lucide-react";
 import { useState } from "react";
 
 function RankForgeLogo({ size = 22 }: { size?: number }) {
@@ -29,10 +29,10 @@ export default function Navbar() {
     const isActive = (path: string) => location.pathname === path;
 
     const navLinks = [
-        { path: "/dashboard", label: "Dashboard", icon: <BarChart3 size={16} /> },
-        { path: "/analyze", label: "Analyze", icon: <Search size={16} /> },
-        { path: "/rank-tracker", label: "Rank Tracker", icon: <Target size={16} /> },
-        { path: "/history", label: "History", icon: <History size={16} /> },
+        { path: "/dashboard", label: "Dashboard", icon: <LayoutDashboard size={16} /> },
+        { path: "/analyze", label: "SEO Analyzer", icon: <SearchCheck size={16} /> },
+        { path: "/rank-tracker", label: "Rank Tracker", icon: <TrendingUp size={16} /> },
+        { path: "/history", label: "Reports", icon: <FileText size={16} /> },
     ];
 
     return (
