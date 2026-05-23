@@ -46,7 +46,7 @@ export default function Hero() {
 
                
                 <p
-                    className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed animate-slide-up"
+                    className="text-muted-foreground text-base sm:text-sm max-w-xl mx-auto mb-10 leading-relaxed animate-slide-up"
                     style={{ animationDelay: "120ms" }}
                 >
                     AI-powered SEO intelligence that tells you exactly what to fix, what to target, and how to outrank your competition - automatically.
