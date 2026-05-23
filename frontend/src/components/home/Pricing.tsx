@@ -16,7 +16,7 @@ export default function Pricing() {
 
             <div className="max-w-5xl w-full mx-auto px-4">
 
-            
+              
                 <div
                     ref={headerRef}
                     className={`text-center mb-14 anim-fade-up ${headerVisible ? "anim-visible" : ""}`}
@@ -66,7 +66,7 @@ export default function Pricing() {
                         </Link>
                     </div>
 
-                  
+                
                     <div
                         ref={proRef}
                         className={`relative rounded-2xl p-8 flex flex-col overflow-hidden anim-fade-right ${proVisible ? "anim-visible" : ""}`}
@@ -76,7 +76,7 @@ export default function Pricing() {
                             transitionDelay: "80ms",
                         }}
                     >
-                       
+                      
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px gradient-bg opacity-60" />
                         <div
                             className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-8 pointer-events-none"
@@ -113,7 +113,7 @@ export default function Pricing() {
                         </ul>
 
                         <button className="btn-forge w-full py-3 text-sm text-white">
-                            Upgrade to Pro
+                            Unlock Pro Access
                         </button>
                     </div>
                 </div>

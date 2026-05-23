@@ -5,7 +5,7 @@ export default function Loading() {
                 <div className="absolute inset-0 rounded-full border-2 border-primary/20" />
                 <div className="absolute inset-0 rounded-full border-2 border-primary border-t-transparent animate-spin" />
             </div>
-            <span className="mono text-xs text-muted-foreground animate-pulse">Forging...</span>
+            <span className="mono text-xs text-muted-foreground animate-pulse">Analyzing...</span>
         </div>
     );
 }

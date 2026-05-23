@@ -2,13 +2,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Lock, Loader2, User2Icon, ArrowRightIcon, EyeIcon, EyeOffIcon } from "lucide-react";
 
-function RankForgeLogo({ size = 22 }: { size?: number }) {
+function SerpIQLogo({ size = 22 }: { size?: number }) {
     return (
-        <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 26 L12 10 L18 19 L22 13" stroke="url(#lgl1)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <circle cx="22" cy="13" r="3" fill="url(#lgl1)"/>
+        <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="6" cy="26" r="1.5" fill="url(#lg_si_g)" opacity="0.25"/>
+            <circle cx="10" cy="20" r="2" fill="url(#lg_si_g)" opacity="0.45"/>
+            <circle cx="14" cy="13" r="2.5" fill="url(#lg_si_g)" opacity="0.65"/>
+            <polyline points="6,26 14,8 23,16" fill="none" stroke="url(#lg_si_g)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <circle cx="23" cy="16" r="3.5" fill="url(#lg_si_g)"/>
             <defs>
-                <linearGradient id="lgl1" x1="6" y1="26" x2="22" y2="10" gradientUnits="userSpaceOnUse">
+                <linearGradient id="lg_si_g" x1="6" y1="26" x2="23" y2="8" gradientUnits="userSpaceOnUse">
                     <stop stopColor="#a855f7"/>
                     <stop offset="1" stopColor="#e879f9"/>
                 </linearGradient>
@@ -25,13 +28,12 @@ export default function Login({ state }: { state: string }) {
     const [showPassword, setShowPassword] = useState(false);
     const [loading] = useState(false);
 
-    const handleSubmit = async (e: React.SubmitEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
     };
 
     return (
         <div className="min-h-screen flex items-stretch">
-        
             <div className="hidden lg:flex flex-col justify-between w-2/5 p-10 relative overflow-hidden"
                 style={{ background: "linear-gradient(135deg, #07070d 0%, #0e0e1a 100%)", borderRight: "1px solid var(--border)" }}>
                 <div className="absolute inset-0 pointer-events-none">
@@ -46,16 +48,16 @@ export default function Login({ state }: { state: string }) {
 
                 <div className="relative z-10">
                     <Link to="/" className="flex items-center gap-2.5">
-                        <RankForgeLogo size={24} />
-                        <span className="syne text-xl font-700 gradient-text">RankForge</span>
+                        <SerpIQLogo size={24} />
+                        <span className="syne text-xl font-700 gradient-text">SERP-IQ</span>
                     </Link>
                 </div>
 
                 <div className="relative z-10">
                     <blockquote className="text-2xl syne font-600 text-white/90 leading-snug mb-4">
-                        "Forge your path<br/>to the top of<br/><span className="gradient-text">search rankings</span>"
+                        "Rank smarter,<br/>not harder — climb to<br/><span className="gradient-text">the top of search</span>"
                     </blockquote>
-                    <p className="text-sm text-white/40 mono">AI-Powered SEO Engine</p>
+                    <p className="text-sm text-white/40 mono">AI-Powered SEO Intelligence</p>
                 </div>
 
                 <div className="relative z-10 flex items-center gap-3">
@@ -69,14 +71,12 @@ export default function Login({ state }: { state: string }) {
                 </div>
             </div>
 
-           
             <div className="flex-1 flex items-center justify-center px-6 py-12 bg-background">
                 <div className="w-full max-w-sm">
-                 
                     <div className="lg:hidden text-center mb-8">
                         <Link to="/" className="inline-flex items-center gap-2.5">
-                            <RankForgeLogo size={22} />
-                            <span className="syne text-xl font-700 gradient-text">RankForge</span>
+                            <SerpIQLogo size={22} />
+                            <span className="syne text-xl font-700 gradient-text">SERP-IQ</span>
                         </Link>
                     </div>
 
@@ -85,7 +85,7 @@ export default function Login({ state }: { state: string }) {
                             {isLoginState ? "Welcome back" : "Create account"}
                         </h1>
                         <p className="text-sm text-muted-foreground">
-                            {isLoginState ? "Sign in to your RankForge account" : "Start forging your rankings today"}
+                            {isLoginState ? "Sign in to your SERP-IQ account" : "Start ranking smarter today"}
                         </p>
                     </div>
 
@@ -93,10 +93,9 @@ export default function Login({ state }: { state: string }) {
                         {!isLoginState && (
                             <div>
                                 <label className="inline-flex text-xs font-500 text-muted-foreground mb-1.5 mono uppercase tracking-wide">
-                                <User2Icon size={12} className="text-muted-foreground" />
+                                    <User2Icon size={12} className="text-muted-foreground" />
                                 </label>
                                 <div className="relative">
-                                  
                                     <input
                                         type="text"
                                         required
@@ -111,10 +110,9 @@ export default function Login({ state }: { state: string }) {
 
                         <div>
                             <label className="text-xs font-500 text-muted-foreground mb-1.5 mono uppercase tracking-wide inline-flex">
-                               <Mail size={12} className="text-muted-foreground" />
+                                <Mail size={12} className="text-muted-foreground" />
                             </label>
                             <div className="relative">
-                        
                                 <input
                                     type="email"
                                     required
@@ -128,10 +126,9 @@ export default function Login({ state }: { state: string }) {
 
                         <div>
                             <label className="text-xs font-500 text-muted-foreground mb-1.5 mono uppercase tracking-wide inline-flex">
-                               <Lock size={12} className="text-muted-foreground" />
+                                <Lock size={12} className="text-muted-foreground" />
                             </label>
                             <div className="relative">
-                               
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     required
@@ -169,7 +166,7 @@ export default function Login({ state }: { state: string }) {
 
                     <div className="mt-6 text-center">
                         <p className="text-sm text-muted-foreground">
-                            {isLoginState ? "New to RankForge?" : "Already have an account?"}
+                            {isLoginState ? "New to SERP-IQ?" : "Already have an account?"}
                             <button
                                 onClick={() => setIsLoginState((prev) => !prev)}
                                 className="text-primary hover:text-accent font-500 pl-1.5 transition-colors"

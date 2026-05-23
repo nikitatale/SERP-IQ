@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AlertTriangleIcon, ClockIcon, ExternalLinkIcon } from "lucide-react";
 import ScoreGauge from "./ScoreGauge";
 import { Link } from "react-router-dom";

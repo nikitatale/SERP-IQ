@@ -71,7 +71,7 @@ export default function Dashboard() {
                             <h1 className="syne text-2xl sm:text-3xl font-700 text-foreground">
                                 Hey, <span className="gradient-text inline-flex">{user?.name.split(" ")[0]} &nbsp; <Sparkles className="w-4 h-4"/></span>
                             </h1>
-                            <p className="text-sm text-muted-foreground mt-1">Analyze websites and forge your SEO performance.</p>
+                            <p className="text-sm text-muted-foreground mt-1">Analyze any website and track your SEO performance.</p>
                         </div>
                         <div className="hidden sm:block">
                             <span className="tag-pill">{user.plan === "free" ? "Free Plan" : "Pro Plan"}</span>
@@ -100,7 +100,7 @@ export default function Dashboard() {
                             id="dashboard-analyze-btn"
                             className="btn-forge px-5 py-2.5 text-sm text-white flex items-center gap-2 shrink-0"
                         >
-                            Forge Report
+                            Get SEO Score
                             <ArrowRightIcon size={14} />
                         </button>
                     </div>
@@ -145,7 +145,7 @@ export default function Dashboard() {
                                 <div className="w-10 h-10 rounded-full border-2 border-primary/20" />
                                 <div className="absolute inset-0 w-10 h-10 rounded-full border-2 border-primary border-t-transparent animate-spin" />
                             </div>
-                            <span className="mono text-xs text-muted-foreground">Forging data...</span>
+                            <span className="mono text-xs text-muted-foreground">Loading data...</span>
                         </div>
                     ) : analyses.length === 0 ? (
                         <div className="glass rounded-2xl p-14 text-center">

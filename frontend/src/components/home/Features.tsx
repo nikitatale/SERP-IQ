@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { homeFeaturesData } from "../../assets/assets";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-
 
 function FeatureCard({ f, i }: { f: any; i: number }) {
     const [ref, visible] = useScrollAnimation({ threshold: 0.2, rootMargin: "0px 0px -120px 0px" });
 
- 
+   
     const baseClass = i % 2 === 0 ? "anim-fade-left" : "anim-fade-right";
 
     return (
@@ -15,7 +13,7 @@ function FeatureCard({ f, i }: { f: any; i: number }) {
             className={`glass card-hover group p-6 relative overflow-hidden ${baseClass} ${visible ? "anim-visible" : ""}`}
             style={{ transitionDelay: `${(i % 3) * 80}ms` }}
         >
-        
+          
             <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ background: "radial-gradient(ellipse at top left, rgba(168,85,247,0.06) 0%, transparent 70%)" }}
@@ -48,21 +46,21 @@ export default function Features() {
             <div className="absolute inset-0 bg-dot-pattern opacity-[0.04] pointer-events-none" />
 
             <div className="max-w-6xl mx-auto px-4">
-             
+              
                 <div
                     ref={headerRef}
                     className={`text-center mb-16 anim-fade-up ${headerVisible ? "anim-visible" : ""}`}
                 >
                     <span className="tag-pill mb-4 inline-flex">Features</span>
                     <h2 className="syne text-3xl sm:text-4xl md:text-5xl font-700 mb-5 text-foreground leading-tight">
-                        Everything to <span className="gradient-text">Rank Higher</span>
+                        Everything to <span className="gradient-text">Rank Smarter</span>
                     </h2>
                     <p className="text-muted-foreground max-w-lg mx-auto text-sm leading-relaxed">
                         Enterprise-grade SEO analysis powered by real browser rendering and AI, built for teams that care about performance and search visibility.
                     </p>
                 </div>
 
-               
+             
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {homeFeaturesData.map((f: any, i: number) => (
                         <FeatureCard key={f.title} f={f} i={i} />

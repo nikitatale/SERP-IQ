@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { SearchIcon, GlobeIcon, FileSearchIcon, BrainIcon, CheckCircleIcon, AlertCircle, Loader2, ArrowRightIcon } from "lucide-react";
@@ -17,7 +15,7 @@ export default function Analyze() {
     const [currentStep, setCurrentStep] = useState(0);
     const [error, setError] = useState("");
     const [searchParams] = useSearchParams();
-    const pollRef = useRef<any>(null);
+    const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const navigate = useNavigate();
 
     const handleAnalyze = async (submitUrl?: string) => {
@@ -32,7 +30,7 @@ export default function Analyze() {
         setTimeout(() => { setAnalyzing(false); navigate(`/report/id123`); }, 8000);
     };
 
-    const handleSubmit = (e: React.SubmitEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         handleAnalyze();
     };
@@ -40,7 +38,7 @@ export default function Analyze() {
     useEffect(() => {
         const prefillUrl = searchParams.get("url");
         if (prefillUrl) {
-            (() => setUrl(prefillUrl))();
+            setUrl(prefillUrl);
             setTimeout(() => handleAnalyze(prefillUrl), 500);
         }
         return () => { if (pollRef.current) clearInterval(pollRef.current); };
@@ -48,12 +46,11 @@ export default function Analyze() {
 
     return (
         <div className="min-h-screen pt-20 bg-background">
-          
             <div className="border-b border-border bg-card/50 backdrop-blur-sm text-center">
                 <div className="max-w-4xl mx-auto px-4 py-6">
                     <span className="mono text-xs text-muted-foreground uppercase tracking-widest">SEO Analyzer</span>
                     <h1 className="syne text-2xl sm:text-3xl font-700 text-foreground mt-1">
-                        Forge Your <span className="gradient-text">SEO Audit</span>
+                        Run Your <span className="gradient-text">Free SEO Audit</span>
                     </h1>
                 </div>
             </div>
@@ -91,7 +88,7 @@ export default function Analyze() {
                                     id="analyze-submit-btn"
                                     className="btn-forge px-5 py-2.5 text-sm text-white flex items-center gap-2 shrink-0"
                                 >
-                                    Forge Report
+                                    Run Free Audit
                                     <ArrowRightIcon size={14} />
                                 </button>
                             </div>
@@ -116,14 +113,13 @@ export default function Analyze() {
                             <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4 animate-float">
                                 <BrainIcon size={28} className="text-white" />
                             </div>
-                            <h2 className="syne text-2xl font-700 text-foreground mb-2">Forging Your Report</h2>
+                            <h2 className="syne text-2xl font-700 text-foreground mb-2">Analyzing Your Site</h2>
                             <div className="flex justify-center items-center gap-2 text-muted-foreground">
                                 <Loader2 size={14} className="text-primary animate-spin shrink-0" />
                                 <span className="mono text-sm truncate max-w-[280px]">{url}</span>
                             </div>
                         </div>
 
-                      
                         <div className="space-y-3">
                             {STEPS.map((step, i) => {
                                 const isComplete = i < currentStep;

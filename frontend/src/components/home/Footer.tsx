@@ -1,16 +1,27 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ArrowUp } from "lucide-react";
 import { homefooterLinks } from "../../assets/assets";
 import { SiX, SiInstagram, SiFacebook, SiGithub } from "@icons-pack/react-simple-icons";
 
-function RankForgeLogo({ size = 20 }: { size?: number }) {
-
+function SerpIQLogo({ size = 20 }: { size?: number }) {
     return (
-        <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 26 L12 10 L18 19 L22 13" stroke="url(#lgf1)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <circle cx="22" cy="13" r="3" fill="url(#lgf1)"/>
+       <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+         
+            <circle cx="6"  cy="26" r="1.5" fill="url(#si_g)" opacity="0.25"/>
+            <circle cx="10" cy="20" r="2"   fill="url(#si_g)" opacity="0.45"/>
+            <circle cx="14" cy="13" r="2.5" fill="url(#si_g)" opacity="0.65"/>
+           
+            <polyline
+                points="6,26 14,8 23,16"
+                fill="none"
+                stroke="url(#si_g)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+          
+            <circle cx="23" cy="16" r="3.5" fill="url(#si_g)"/>
             <defs>
-                <linearGradient id="lgf1" x1="6" y1="26" x2="22" y2="10" gradientUnits="userSpaceOnUse">
+                <linearGradient id="si_g" x1="6" y1="26" x2="23" y2="8" gradientUnits="userSpaceOnUse">
                     <stop stopColor="#a855f7"/>
                     <stop offset="1" stopColor="#e879f9"/>
                 </linearGradient>
@@ -21,12 +32,9 @@ function RankForgeLogo({ size = 20 }: { size?: number }) {
 
 export default function Footer() {
 
- const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-};
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
     return (
         <footer className="relative border-t border-border py-14 bg-card">
@@ -36,10 +44,12 @@ export default function Footer() {
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-10 mb-12">
                     <div className="col-span-2">
                         <div className="flex items-center gap-2.5 mb-4">
-                            <RankForgeLogo size={20} />
-                            <span className="syne text-lg font-700 gradient-text">RankForge</span>
+                            <SerpIQLogo size={20} />
+                            <span className="syne text-lg font-700 gradient-text">SERP-IQ</span>
                         </div>
-                        <p className="text-xs text-muted-foreground mb-1 leading-relaxed w-5/6">Forge your path to #1 rankings with AI-powered SEO analysis and real-time tracking.</p>
+                        <p className="text-xs text-muted-foreground mb-4 leading-relaxed w-5/6">
+                            Rank smarter, not harder. AI-powered SEO intelligence to outrank your competition.
+                        </p>
                         <div className="flex items-center gap-3">
                             {[
                                 { icon: <SiX size={15} />, href: "#" },
@@ -71,12 +81,12 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="mono text-xs text-muted-foreground/60">&copy; {new Date().getFullYear()} RankForge. All rights reserved.</p>
-                      <div className="flex items-center gap-3">
-                      <button onClick={scrollToTop} aria-label="Scroll to top" className="p-2 rounded-full border border-border hover:bg-muted transition-colors" >
-                       <ArrowUp size={16} />
-                      </button>
-                </div>
+                    <p className="mono text-xs text-muted-foreground/60">&copy; {new Date().getFullYear()} SERP-IQ. All rights reserved.</p>
+                    <div className="flex items-center gap-3">
+                        <button onClick={scrollToTop} aria-label="Scroll to top" className="p-2 rounded-full border border-border hover:bg-muted transition-colors">
+                            <ArrowUp size={16} />
+                        </button>
+                    </div>
                 </div>
             </div>
         </footer>

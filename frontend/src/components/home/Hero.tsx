@@ -15,7 +15,7 @@ export default function Hero() {
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-18 overflow-hidden">
 
-           
+          
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div
                     className="absolute top-[-15%] left-[10%] w-[500px] h-[500px] rounded-full opacity-30 animate-aurora"
@@ -40,16 +40,16 @@ export default function Hero() {
                     className="syne text-5xl sm:text-6xl md:text-7xl font-800 leading-[1.05] mb-6 tracking-tight animate-slide-up"
                     style={{ animationDelay: "50ms" }}
                 >
-                    Forge Your Path<br />
-                    to <span className="gradient-text">Rank #1</span>
+                    Rank Smarter,<br />
+                    <span className="gradient-text">Not Harder.</span>
                 </h1>
 
-            
+               
                 <p
                     className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed animate-slide-up"
                     style={{ animationDelay: "120ms" }}
                 >
-                    AI-powered SEO audits that reveal what's holding you back. Analyze any website, track keyword rankings, and auto-generate intelligent SEO reports.
+                    AI-powered SEO intelligence that tells you exactly what to fix, what to target, and how to outrank your competition - automatically.
                 </p>
 
               
@@ -65,7 +65,7 @@ export default function Hero() {
                                 type="text"
                                 value={url}
                                 onChange={(e) => setUrl(e.target.value)}
-                                placeholder="Enter website URL (e.g., example.com)"
+                                placeholder="Enter website URL (e.g. example.com)"
                                 className="w-full bg-transparent text-foreground placeholder-muted-foreground outline-none text-sm py-2.5"
                                 id="hero-url-input"
                             />
@@ -75,13 +75,13 @@ export default function Hero() {
                             id="hero-analyze-btn"
                             className="btn-forge px-6 py-2.5 text-sm text-white flex items-center gap-2 shrink-0"
                         >
-                            Analyze Now
+                            Run Free Audit
                             <ArrowRightIcon size={14} />
                         </button>
                     </div>
                 </form>
 
-               
+              
                 <p
                     className="text-muted-foreground/60 text-xs mb-12 animate-fade-in"
                     style={{ animationDelay: "280ms" }}
@@ -89,7 +89,7 @@ export default function Hero() {
                     Free plan with 5 analyses daily • No credit card needed.
                 </p>
 
-              
+             
                 <div
                     className="flex items-center justify-center gap-6 flex-wrap animate-fade-in"
                     style={{ animationDelay: "360ms" }}
@@ -107,7 +107,7 @@ export default function Hero() {
                 </div>
             </div>
 
-        
+         
             <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none z-0 opacity-30">
                 <HomeWave />
             </div>

@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { homeHowItWorksData } from "../../assets/assets";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 function StepCard({ step, i }: { step: any; i: number }) {
     const [ref, visible] = useScrollAnimation({ threshold: 0.2, rootMargin: "0px 0px -120px 0px" });
 
-   
+    
     const directionClass = i === 0 ? "anim-fade-left" : i === 2 ? "anim-fade-right" : "anim-fade-up";
 
     return (
@@ -52,7 +51,7 @@ export default function HowItWorks() {
             />
 
             <div className="max-w-5xl mx-auto px-4">
-               
+             
                 <div
                     ref={headerRef}
                     className={`text-center mb-16 anim-fade-up ${headerVisible ? "anim-visible" : ""}`}
@@ -62,7 +61,7 @@ export default function HowItWorks() {
                         Three steps to <span className="gradient-text">dominate search</span>
                     </h2>
                     <p className="text-muted-foreground max-w-xl mx-auto text-sm">
-                        RankForge combines real browser automation and AI to simulate authentic user interactions and deliver comprehensive, actionable SEO insights.
+                        SERP-IQ combines real browser automation and AI to simulate authentic user interactions and deliver comprehensive, actionable SEO insights.
                     </p>
                 </div>
 

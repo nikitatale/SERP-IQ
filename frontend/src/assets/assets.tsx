@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { BarChart3Icon, EyeIcon, FileSearchIcon, GlobeIcon, ShieldIcon, TargetIcon, TrendingUpIcon, ZapIcon } from "lucide-react";
 
 export const homeFeaturesData = [

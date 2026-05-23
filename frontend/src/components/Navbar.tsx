@@ -3,13 +3,64 @@ import { useTheme } from "../context/ThemeContext";
 import { LogOut, Menu, X, Sun, Moon, LayoutDashboard, SearchCheck, TrendingUp, FileText } from "lucide-react";
 import { useState } from "react";
 
-function RankForgeLogo({ size = 22 }: { size?: number }) {
+interface SerpIQLogoProps {
+    size?: number;
+    iconOnly?: boolean;
+}
+
+function SerpIQLogo({ size = 22, iconOnly = false }: SerpIQLogoProps) {
+    if (iconOnly) {
+   
+        return (
+            <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SERP-IQ">
+                <rect x="1" y="1" width="30" height="30" rx="8" fill="url(#si_icon_bg)" opacity="0.1"/>
+                <rect x="1" y="1" width="30" height="30" rx="8" fill="none" stroke="url(#si_icon_stroke)" strokeWidth="1"/>
+                
+                <circle cx="8"  cy="25" r="1.2" fill="url(#si_icon_g)" opacity="0.3"/>
+                <circle cx="11" cy="20" r="1.5" fill="url(#si_icon_g)" opacity="0.55"/>
+                <circle cx="15" cy="14" r="1.8" fill="url(#si_icon_g)" opacity="0.75"/>
+              
+                <polyline points="8,25 15,9 23,16" fill="none" stroke="url(#si_icon_g)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+              
+                <circle cx="23" cy="16" r="3" fill="url(#si_icon_g)"/>
+                <defs>
+                    <linearGradient id="si_icon_g"  x1="6" y1="26" x2="24" y2="8"  gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#a855f7"/>
+                        <stop offset="1" stopColor="#e879f9"/>
+                    </linearGradient>
+                    <linearGradient id="si_icon_bg" x1="6" y1="26" x2="24" y2="8"  gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#a855f7"/>
+                        <stop offset="1" stopColor="#e879f9"/>
+                    </linearGradient>
+                    <linearGradient id="si_icon_stroke" x1="6" y1="26" x2="24" y2="8" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#a855f7"/>
+                        <stop offset="1" stopColor="#e879f9"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        );
+    }
+
+  
     return (
-        <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 26 L12 10 L18 19 L22 13" stroke="url(#lg1)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <circle cx="22" cy="13" r="3" fill="url(#lg1)"/>
+        <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+         
+            <circle cx="6"  cy="26" r="1.5" fill="url(#si_g)" opacity="0.25"/>
+            <circle cx="10" cy="20" r="2"   fill="url(#si_g)" opacity="0.45"/>
+            <circle cx="14" cy="13" r="2.5" fill="url(#si_g)" opacity="0.65"/>
+           
+            <polyline
+                points="6,26 14,8 23,16"
+                fill="none"
+                stroke="url(#si_g)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+          
+            <circle cx="23" cy="16" r="3.5" fill="url(#si_g)"/>
             <defs>
-                <linearGradient id="lg1" x1="6" y1="26" x2="22" y2="10" gradientUnits="userSpaceOnUse">
+                <linearGradient id="si_g" x1="6" y1="26" x2="23" y2="8" gradientUnits="userSpaceOnUse">
                     <stop stopColor="#a855f7"/>
                     <stop offset="1" stopColor="#e879f9"/>
                 </linearGradient>
@@ -42,9 +93,9 @@ export default function Navbar() {
                     <div className="flex items-center justify-between h-14">
                      
                         <Link to="/" className="flex items-center gap-2.5 group">
-                            <RankForgeLogo size={22} />
+                            <SerpIQLogo size={22} />
                             <div className="flex flex-col leading-none">
-                                <span className="syne text-[16px] font-700 font-bold tracking-tight gradient-text">RankForge</span>
+                                <span className="syne text-[16px] font-700 font-bold tracking-tight gradient-text">SERP-IQ</span>
                             </div>
                         </Link>
 
@@ -182,4 +233,4 @@ export default function Navbar() {
     );
 }
 
-export { RankForgeLogo };
+export { SerpIQLogo };
