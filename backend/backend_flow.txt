@@ -1,0 +1,22 @@
+
+
+1. Create server using Express
+
+2. Use MongoDB Database
+
+3. Connect server and DB using Mongoose - ODM 
+
+4. AUTH - JSON_WEB_TOKEN
+
+5. Auth Controllers
+
+6. Analysis Controllers (for AI SEO Analysis)
+
+7. Rank Controllers (for Keyword ranking)
+
+8. CRON JOBS
+
+9. GEMINI API - (for AI Analysis)
+
+10. Deployment on VERCEL
+
