@@ -1,10 +1,16 @@
 
 
+
 import express from "express";
+
 import cors from "cors";
+
 import "dotenv/config";
+
 import dns from "dns";
+
 import connectDb from "./config/db.js";
+
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 connectDb()
@@ -13,6 +19,7 @@ const app = express();
 
 
 app.use(cors());
+
 app.use(express.json());
 
 
