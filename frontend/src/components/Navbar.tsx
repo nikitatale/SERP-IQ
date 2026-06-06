@@ -2,6 +2,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import { LogOut, Menu, X, Sun, Moon, LayoutDashboard, SearchCheck, TrendingUp, FileText } from "lucide-react";
 import { useState } from "react";
+import { useApp } from "../context/AppContext";
 
 interface SerpIQLogoProps {
     size?: number;
@@ -70,13 +71,16 @@ function SerpIQLogo({ size = 22, iconOnly = false }: SerpIQLogoProps) {
 }
 
 export default function Navbar() {
-    const user = { name: "John", email: "john@example.com", plan: "PRO" };
+    const {user, logout} = useApp();
     const { theme, setTheme } = useTheme();
     const navigate = useNavigate();
     const location = useLocation();
     const [mobileOpen, setMobileOpen] = useState(false);
 
-    const handleLogout = () => navigate("/");
+    const handleLogout = () => {
+        logout();
+        navigate("/");
+    }
     const isActive = (path: string) => location.pathname === path;
 
     const navLinks = [
@@ -139,14 +143,15 @@ export default function Navbar() {
                                     </div>
                                     <button
                                         onClick={handleLogout}
-                                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] text-muted-foreground hover:text-danger hover:bg-danger/5 transition-all"
+                                        className="flex items-center gap-1.5 font-semibold px-3 py-1.5 rounded-lg text-[13px] text-muted-foreground hover:text-danger hover:bg-danger/5 transition-all"
                                     >
-                                        <LogOut size={14} />
+                                        <LogOut size={14} /> 
+                                        Logout
                                     </button>
                                 </>
                             ) : (
                                 <>
-                                    <Link to="/login" className="px-4 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors">
+                                    <Link to="/login" className="px-4 py-2 text-[13px] font-bold text-muted-foreground hover:text-foreground transition-colors">
                                         Log In
                                     </Link>
                                     <Link to="/register" className="btn-forge px-5 py-2 text-[13px] text-white">

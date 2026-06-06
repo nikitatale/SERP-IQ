@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Mail, Lock, Loader2, User2Icon, ArrowRightIcon, EyeIcon, EyeOffIcon } from "lucide-react";
+import { useApp } from "../context/AppContext";
+import toast from "react-hot-toast";
 
 function SerpIQLogo({ size = 22 }: { size?: number }) {
     return (
@@ -26,10 +28,31 @@ export default function Login({ state }: { state: string }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    const [loading] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const {login, register} = useApp();
+
+    const {searchParams} = useSearchParams();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setLoading(true);
+
+        let result;
+        if(isLoginState){
+            result = await login(email, password)
+        } else {
+            result = await register(name, email, password)
+        }
+
+        if(result.success){
+            const redirect = searchParams.get("redirect") 
+            navigate(redirect)
+        } else {
+            toast.error(result.message || "Login failed");
+        }
+
+        setLoading(false);
     };
 
     return (
