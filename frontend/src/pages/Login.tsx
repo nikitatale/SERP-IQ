@@ -72,13 +72,13 @@ export default function Login({ state }: { state: string }) {
                 <div className="relative z-10">
                     <Link to="/" className="flex items-center gap-2.5">
                         <SerpIQLogo size={24} />
-                        <span className="syne text-xl font-700 gradient-text">SERP-IQ</span>
+                        <span className="syne text-xl font-700 gradient-text text-center">SERP-IQ</span>
                     </Link>
                 </div>
 
                 <div className="relative z-10">
-                    <blockquote className="text-2xl syne font-600 text-white/90 leading-snug mb-4">
-                        "Rank smarter,<br/>not harder — climb to<br/><span className="gradient-text">the top of search</span>"
+                    <blockquote className="text-4xl syne font-600 text-white/90 leading-snug mb-4">
+                        "Rank smarter,<br/>not harder - climb to<br/><span className="gradient-text">the top of search</span>"
                     </blockquote>
                     <p className="text-sm text-white/40 mono">AI-Powered SEO Intelligence</p>
                 </div>
