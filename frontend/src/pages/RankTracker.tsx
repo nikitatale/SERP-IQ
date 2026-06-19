@@ -89,21 +89,58 @@ export default function RankTracker() {
 
     const handleRefresh = async (id: string) => {
         setRefreshing(id);
-        setTimeout(() => {
+        try {
+            await api.post(`/api/rank/${id}/refresh`)
+
+            setKeywords((prev) => prev.map((k) => (k._id === id ? {...k, status: "checking"} : k)))
+
+                    const pollInterval = setInterval(async() => {
+                    try {
+                        const check = await api.get(`/api/rank/${id}`);
+                        if(check.data.tracking.status !== "checking"){
+                            clearInterval(pollInterval);
+                            setKeywords((prev) => prev.map((k) => (k._id === id ? check.data.tracking : k)))
+                            setRefreshing(null)
+                        }
+                    } catch (error) {
+                        console.error(error);
+                    }
+                }, 3000)
+            
+        } catch (error) {
+            console.error("Refresh Error: ", error);
             setRefreshing(null);
-        }, 1000);
+        }
     };
 
     const handleDelete = async (id: string) => {
         if (!confirm("Delete this keyword tracking?")) return;
         setDeleting(id);
-        setTimeout(() => {
-            setDeleting(null);
-        }, 1000);
+        try {
+
+            await api.delete(`/api/rank/${id}`)
+            setKeywords((prev) => prev.filter((k) => k._id !== id))
+            
+        } catch (error) {
+            console.error("Delete failed: " , error);
+        }
+
+        setDeleting(null);
     };
 
     const handleToggle = async (id: string) => {
-        console.log(id);
+         try {
+
+            const res = await api.put(`/api/rank/${id}/toggle`)
+            if(res.data.success){
+              setKeywords((prev) => prev.map((k) => (k._id === id ? {...k, active: res.data.tracking.active} : k)))
+            }
+         
+            
+        } catch (error) {
+            console.error("Toggle failed: " , error);
+        }
+
     };
 
     const getPositionBadge = (pos: number | null) => {
