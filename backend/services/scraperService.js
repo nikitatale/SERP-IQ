@@ -1,7 +1,7 @@
 
 
 
-import { chromium } from "playwright-core";
+import { chromium } from "playwright";
 
 export async function scrapeUrl(url) {
   let browser;
