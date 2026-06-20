@@ -13,6 +13,7 @@ import connectDb from "./config/db.js";
 import authRouter from "./routes/authRoutes.js";
 import rankRouter from "./routes/rankRoutes.js";
 import analysisRouter from "./routes/analysisRoutes.js";
+import { startRankTrackingCron } from "./cron/rankTrackingCron.js";
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
@@ -32,6 +33,8 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/rank", rankRouter);
 app.use("/api/analysis", analysisRouter);
+
+startRankTrackingCron();
 
 const PORT = process.env.PORT || 8080;
 
