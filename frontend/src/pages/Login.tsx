@@ -31,7 +31,7 @@ export default function Login({ state }: { state: string }) {
     const [loading, setLoading] = useState(false);
     const {login, register} = useApp();
 
-    const {searchParams} = useSearchParams();
+    const [searchParams] = useSearchParams();
     const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -46,8 +46,8 @@ export default function Login({ state }: { state: string }) {
         }
 
         if(result.success){
-            const redirect = searchParams.get("redirect") 
-            navigate(redirect)
+            const redirect = searchParams.get("redirect") || "/dashboard";
+            navigate(redirect);
         } else {
             toast.error(result.message || "Login failed");
         }

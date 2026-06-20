@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { SearchIcon, ArrowRightIcon, BarChart3Icon, GlobeIcon, TrendingUpIcon, ZapIcon, Sparkles } from "lucide-react";
+import { SearchIcon, ArrowRightIcon, GlobeIcon, TrendingUpIcon, ZapIcon, Sparkles } from "lucide-react";
 import AnalysesCard from "../components/AnalysesCard";
 import { useApp } from "../context/AppContext";
 
@@ -77,12 +77,12 @@ export default function Dashboard() {
                                 <span className="mono text-xs text-muted-foreground uppercase tracking-widest">Dashboard</span>
                             </div>
                             <h1 className="syne text-2xl sm:text-3xl font-700 text-foreground">
-                                Hey, <span className="gradient-text inline-flex">{user?.name.split(" ")[0]} &nbsp; <Sparkles className="w-4 h-4"/></span>
+                                Hey, <span className="gradient-text inline-flex"> {user?.name?.split(" ")[0] || "User"} &nbsp; <Sparkles className="w-4 h-4"/></span>
                             </h1>
                             <p className="text-sm text-muted-foreground mt-1">Analyze any website and track your SEO performance.</p>
                         </div>
                         <div className="hidden sm:block">
-                            <span className="tag-pill">{user.plan === "free" ? "Free Plan" : "Pro Plan"}</span>
+                            <span className="tag-pill">{user?.plan === "free" ? "Free Plan" : "Pro Plan"}</span>
                         </div>
                     </div>
                 </div>
