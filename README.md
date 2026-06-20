@@ -4,7 +4,7 @@ SERP-IQ is a full-stack AI-powered SEO intelligence platform that helps you anal
 
 ## 🖼️ Demo Preview
 
-![SERP-IQ Preview](/demo.png)
+![SERP-IQ Preview](frontend/public/demo.png)
 
 ---
 
