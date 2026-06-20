@@ -1,4 +1,4 @@
-# 🔍 SERP-IQ - Rank Smarter, Not Harder
+# 📈 SERP-IQ - Rank Smarter, Not Harder
 
 SERP-IQ is a full-stack AI-powered SEO intelligence platform that helps you analyze websites, track keyword rankings on Google, and get detailed SEO audit reports - all in one place.
 
