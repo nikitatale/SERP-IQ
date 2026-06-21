@@ -10,13 +10,13 @@ SERP-IQ is a full-stack AI-powered SEO intelligence platform that helps you anal
 
 ## ✨ Features
 
-- **SEO Analyzer** — Paste any URL and get a full SEO audit including meta tags, headings, images, links, page size, load time, and more
-- **AI-Powered Reports** — Google Gemini AI analyzes your scraped data and gives scores for SEO, Performance, Accessibility, and Best Practices with actionable issue recommendations
-- **Keyword Rank Tracker** — Track where your domain ranks on Google for any keyword across 50 results (5 pages)
-- **Competitor Analysis** — See top 10 competing domains for any keyword
-- **Reports Dashboard** — All your past analyses saved and accessible anytime
-- **Authentication** — Secure JWT-based login and signup system
-- **Dark UI** — Clean, modern dark-themed interface
+- **SEO Analyzer** - Paste any URL and get a full SEO audit including meta tags, headings, images, links, page size, load time, and more
+- **AI-Powered Reports** - Google Gemini AI analyzes your scraped data and gives scores for SEO, Performance, Accessibility, and Best Practices with actionable issue recommendations
+- **Keyword Rank Tracker** - Track where your domain ranks on Google for any keyword across 50 results (5 pages)
+- **Competitor Analysis** - See top 10 competing domains for any keyword
+- **Reports Dashboard** - All your past analyses saved and accessible anytime
+- **Authentication** - Secure JWT-based login and signup system
+- **Dark UI** - Clean, modern dark-themed interface
 
 ---
 
