@@ -115,7 +115,7 @@ Provide 5-15 issues sorted by severity (critical first). Be specific and actiona
 Extract top 10 keywords by frequency from the page content.`;
 
         const response = await ai.models.generateContent({
-            model: 'gemini-flash-latest',
+            model: 'gemini-2.5-flash-lite',
             contents: [{role: "user", parts: [{text: prompt}]}],
             config: {
                 responseMimeType: "application/json",
